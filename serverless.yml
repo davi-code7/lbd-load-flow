@@ -1,0 +1,15 @@
+service: load-flow
+
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  region: us-east-1
+  iam:
+    role: arn:aws:iam::742104988707:role/lambda-role
+
+functions:
+  loadFlow:
+    handler: handler.loadFlow
