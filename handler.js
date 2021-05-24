@@ -9,6 +9,8 @@ module.exports.loadFlow = async (event) => {
 
   const snsSqsSlq = new SnsSqsSlq.default();
 
+  console.log("MESSAGE:", message);
+
   const response = await fetch(
     "http://api.testes.boteria.com.br/api/v1/bots/601d3599961dc5001371fa56/full",
     {
@@ -27,6 +29,6 @@ module.exports.loadFlow = async (event) => {
     JSON.stringify(message),
     "load",
     "flow",
-    "arn:aws:sns:us-east-1:303732912389:sns-flow.fifo"
+    "arn:aws:sns:us-east-1:742104988707:sns-flow.fifo"
   );
 };
